@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<groups xmlns="http://www.isdc.ro/wro"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.isdc.ro/wro wro.xsd">
+
+  <group name='admin-site'>
+    <!--<css>/static/css/lib/admin.css</css>-->
+    <!--<js>/static/js/lib/admin.js</js>-->
+    
+    <!--<group-ref>global</group-ref>-->
+  </group>
+
+  <group name='global'>
+    <!--<css>/static/css/lib/global-whitespace-reset.css</css>-->
+    <!--<css>/static/css/lib/tools.css</css>-->
+    <!--<js>/static/js/lib/core.js</js>-->
+  </group>
+</groups>

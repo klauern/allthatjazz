@@ -1,0 +1,1 @@
+window.Person = Backbone.Model.extend({});
