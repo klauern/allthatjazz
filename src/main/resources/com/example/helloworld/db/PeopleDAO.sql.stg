@@ -15,3 +15,7 @@ create() ::= <<
 findAll() ::= <<
   select id, fullName, jobTitle from people
 >>
+
+deleteById() ::= <<
+	delete from people where id = :id
+>>

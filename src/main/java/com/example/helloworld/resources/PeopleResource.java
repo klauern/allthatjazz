@@ -12,15 +12,18 @@ import javax.ws.rs.core.MultivaluedMap;
 
 import com.example.helloworld.core.Person;
 import com.example.helloworld.db.PeopleDAO;
+import com.yammer.dropwizard.logging.Log;
 
 @Path("/people")
 @Produces(MediaType.APPLICATION_JSON)
 public class PeopleResource {
 
     private final PeopleDAO peopleDAO;
+    private final Log LOG;
 
     public PeopleResource(PeopleDAO peopleDAO) {
         this.peopleDAO = peopleDAO;
+        LOG = Log.forClass(PeopleResource.class);
     }
 
     @POST
@@ -32,6 +35,7 @@ public class PeopleResource {
     @POST
     @Consumes("application/x-www-form-urlencoded")
     public Person createPerson(MultivaluedMap<String, String> form) {
+    	LOG.info("POST called with parameters {}", form.values());
     	Person p = new Person();
     	p.setFullName(form.getFirst("fullName"));
     	p.setJobTitle(form.getFirst("jobTitle"));

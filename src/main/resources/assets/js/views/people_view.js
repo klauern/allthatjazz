@@ -3,7 +3,6 @@ window.PeopleView = Backbone.View.extend({
 		this.collection.on('add', this.addOne, this);
 		this.collection.on('reset', this.addAll, this);
 	},
-	
 	tagName: "ol",
 	
 	render: function(){
