@@ -33,7 +33,8 @@ public class PersonResource {
     @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
     public boolean deletePerson(@PathParam("personId") LongParam personId) {
     	LOG.debug("Delete called on {}", personId.get());
-    	return peopleDAO.deleteById(personId.get());
+    	peopleDAO.deleteById(personId.get());
+    	return true; // not sure how I want to do this
     }
 
 }

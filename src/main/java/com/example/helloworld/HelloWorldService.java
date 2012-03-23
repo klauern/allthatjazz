@@ -42,8 +42,6 @@ public class HelloWorldService extends Service<HelloWorldConfiguration> {
         final Database db = factory.build(configuration.getDatabaseConfiguration(), "h2");
         final PeopleDAO peopleDAO = db.onDemand(PeopleDAO.class);
 
-//		final AssetsBundle assets = new AssetsBundle("/assets", 0);
-//		assets.initialize(environment);
         environment.addHealthCheck(new TemplateHealthCheck(template));
         environment.addResource(new HelloWorldResource(template));
         environment.addResource(new ProtectedResource());

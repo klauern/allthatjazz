@@ -29,6 +29,6 @@ public interface PeopleDAO {
     ImmutableList<Person> findAll();
     
     @SqlUpdate
-    boolean deleteById(@Bind("id") Long id);
+    void deleteById(@Bind("id") Long id);
 
 }

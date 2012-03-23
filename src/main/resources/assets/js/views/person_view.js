@@ -5,6 +5,7 @@ window.PersonView = Backbone.View.extend({
 	events: {
 		'change input': 'toggleStatus',
 		'click #del': 'remove'
+//		'click form': 'save'
 	},
 	
 	initialize: function(){
