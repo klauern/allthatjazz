@@ -1,5 +1,6 @@
 package com.example.helloworld.resources;
 
+import java.net.URI;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -12,6 +13,9 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedMap;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.Status;
+import javax.ws.rs.core.UriBuilder;
 
 import com.example.helloworld.core.Person;
 import com.example.helloworld.db.PeopleDAO;
@@ -32,19 +36,13 @@ public class PeopleResource {
 	}
 
 	@POST
-	public Person createPerson(Person person) {
-		final long personId = peopleDAO.create(person);
-		return peopleDAO.findById(personId);
-	}
-
-	@POST
-	@Consumes("application/x-www-form-urlencoded")
-	public Person createPerson(MultivaluedMap<String, String> form) {
-		LOG.info("POST called with parameters {}", form.values());
+	public Response createPerson(MultivaluedMap<String, String> form) {
+		LOG.info("POST called with parameters {} and values {}", form.keySet(), form.values());
 		Person p = new Person();
 		p.setFullName(form.getFirst("fullName"));
 		p.setJobTitle(form.getFirst("jobTitle"));
-		return createPerson(p);
+		p = peopleDAO.findById(peopleDAO.create(p));
+		return Response.created(UriBuilder.fromPath("/person").build(p.getId())).build();
 	}
 
 	@GET
