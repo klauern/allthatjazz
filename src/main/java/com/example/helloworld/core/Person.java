@@ -1,9 +1,13 @@
 package com.example.helloworld.core;
 
+import org.codehaus.jackson.annotate.JsonProperty;
+
 public class Person {
 
     private long id;
+    @JsonProperty
     private String fullName;
+    @JsonProperty
     private String jobTitle;
 
     public long getId() {

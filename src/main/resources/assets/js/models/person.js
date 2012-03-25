@@ -1,1 +1,1 @@
-window.Person = Backbone.Model.extend({});
+window.Person = Backbone.Model.extend({urlRoot: "/person"});

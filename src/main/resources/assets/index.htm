@@ -3,28 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <title>DropWizard Thing</title>
+
+<script type="text/html" id="form-template">
+            <form id="create-person-f" class="well form-inline">
+                <input id="fullName-input" type="text" name="fullName" class="input-small" placeholder="Full Name">
+                <input id="jobTitle-input" type="text" name="jobTitle" class="input-small" placeholder="Job Title">
+                <button type="submit" class="btn">Create New Person</button>
+            </form>
+</script>
 <link href="/assets/bootstrap/css/bootstrap.css" rel="stylesheet">
 <script src="/assets/js/jquery-1.7.2.min.js"></script>
-<script src="/assets/js/underscore.js"></script>
-<script src="/assets/js/backbone.js"></script>
-<script src="/assets/js/app.js"></script>
+<script src="/assets/js/underscore-1.3.1.js"></script>
+<script src="/assets/js/backbone-0.9.1.js"></script>
 <script src="/assets/js/models/person.js"></script>
 <script src="/assets/js/collections/people.js"></script>
 <script src="/assets/js/views/person_view.js"></script>
 <script src="/assets/js/views/people_view.js"></script>
+<script src="/assets/js/views/person_form_view.js"></script>
 <script src="/assets/js/application.js"></script>
 <script src="/assets/js/router.js"></script>
 </head>
 <body>
-	<div id="add-person-form">
-<!-- 		<script type="text/html" id="form-template"> -->
-	<form class="well form-inline" action="/people" method="POST">
-		<input type="text" name="fullName" class="input-small" placeholder="Full Name">
-		<input type="text" name="jobTitle" class="input-small" placeholder="Job Title">
-		<button type="submit" class="btn">Create New Person</button>
-	</form>
-<!-- </script> -->
-	</div>
-	<div id="people-list"></div>
+    <h1>
+        Nick's Simple Person List
+        </h3>
+        <div id="bb-people-form"></div>
+<!--         <div id="add-person-form"> -->
+<!--             <form id="create-person-form" class="well form-inline" -->
+<!--                 action="/people" method="POST"> -->
+<!--                 <input type="text" name="fullName" class="input-small" -->
+<!--                     placeholder="Full Name"> <input type="text" -->
+<!--                     name="jobTitle" class="input-small" placeholder="Job Title"> -->
+<!--                 <button type="submit" class="btn">Create New Person</button> -->
+<!--             </form> -->
+<!--         </div> -->
+        <div id="people-list"></div>
 </body>
 </html>

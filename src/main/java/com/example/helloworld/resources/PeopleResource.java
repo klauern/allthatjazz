@@ -35,20 +35,13 @@ public class PeopleResource {
 		LOG = Log.forClass(PeopleResource.class);
 	}
 
-	@POST
-	public Response createPerson(MultivaluedMap<String, String> form) {
-		LOG.info("POST called with parameters {} and values {}", form.keySet(), form.values());
-		Person p = new Person();
-		p.setFullName(form.getFirst("fullName"));
-		p.setJobTitle(form.getFirst("jobTitle"));
-		p = peopleDAO.findById(peopleDAO.create(p));
-		return Response.created(UriBuilder.fromPath("/person").build(p.getId())).build();
-	}
-
 	@GET
 	@CacheControl(maxAge = 2, maxAgeUnit = TimeUnit.MINUTES)
 	public List<Person> listPeople() {
-		return peopleDAO.findAll();
+		LOG.debug("Listing all people");
+		List<Person> ppl = peopleDAO.findAll();
+		LOG.debug("size of ppl is {}", ppl.size());
+		return ppl;
 	}
 
 	@DELETE
