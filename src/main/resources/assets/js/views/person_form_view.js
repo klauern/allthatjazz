@@ -25,6 +25,7 @@ window.PersonForm = Backbone.View.extend({
     });
     console.log("saving person");
     person.save();
+    $('form')[ 0 ].reset();
     return person;
   }
 });
