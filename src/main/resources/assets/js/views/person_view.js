@@ -1,5 +1,5 @@
 window.PersonView = Backbone.View.extend({
-  template : _.template('<a id="del" name="#">X</a> <b><%= fullName %></b> the <%= jobTitle %>'),
+  template : _.template('<a class="btn-mini btn-danger" id="del" href="" name="#">delete</a> <b><%= fullName %></b> the <%= jobTitle %>'),
   tagName : "li",
   events : {
 //    'change input' : 'toggleStatus',
@@ -11,7 +11,8 @@ window.PersonView = Backbone.View.extend({
     return this;
   },
 
-  remove : function() {
+  remove : function(event) {
+    event.preventDefault();
     this.$el.remove();
     this.model.destroy();
   }
