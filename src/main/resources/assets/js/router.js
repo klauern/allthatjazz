@@ -4,11 +4,13 @@ window.PeopleApp = new (Backbone.Router.extend({
     "/person/:id" : "show"
   },
 
-    initialize: function() {
-        this.people = new People();
-        this.peopleView = new PeopleView({collection: this.people});
-        this.peopleView.render();
-    },
+  initialize : function() {
+    this.people = new People();
+    this.peopleView = new PeopleView({
+      collection : this.people
+    });
+    this.peopleView.render();
+  },
 
   index : function() {
     $('#bb-people-form').html(this.peopleView.personForm.el); 
