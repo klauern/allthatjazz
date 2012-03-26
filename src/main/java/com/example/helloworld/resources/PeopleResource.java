@@ -46,9 +46,12 @@ public class PeopleResource {
 
 	@DELETE
 	@Path("/{personId}")
-	public boolean deletePerson(@PathParam("personId") LongParam personId) {
+	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+	public Response deletePerson(@PathParam("personId") LongParam personId) {
+		LOG.info("Deleting {} out", personId);
 		this.peopleDAO.deleteById(personId.get());
-		return true;
+		LOG.info("deleted, returning response");
+		return Response.ok().build();
 	}
 
 }
