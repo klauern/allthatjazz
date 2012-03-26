@@ -1,18 +1,31 @@
 window.PersonForm = Backbone.View.extend({
-	template : _.template($("#form-template").html()),
+  template : _.template($("#form-template").html()),
+  initialize : function() {
+  },
 
-	render : function() {
-		this.$el.html(this.template());
-	},
+  events : {
+    'submit #create-person-f' : 'triggerSave'
+  },
+  
+  render : function() {
+    this.$el.html(this.template());
+  },
+  
+  triggerSave : function(event) {
+    console.log("triggered event in person form");
+    this.trigger('submit');
+  },
 
-	savePerson : function(event) {
-		event.preventDefault();
-		var person = new Person({
-			fullName : $('#create-person-f :input[name="fullName"]').val(),
-			jobTitle : $('#create-person-f :input[name="jobTitle"]').val()
-		});
-		console.log("saving person");
-		person.save();
-		return person;
-	}
+  savePerson : function(event) {
+    event.preventDefault();
+    console.log("submit clicked");
+    var person = new Person({
+      fullName : $('#create-person-f :input[name="fullName"]').val(),
+      jobTitle : $('#create-person-f :input[name="jobTitle"]').val()
+    });
+    console.log("saving person");
+    person.save();
+    
+    return person;
+  }
 });

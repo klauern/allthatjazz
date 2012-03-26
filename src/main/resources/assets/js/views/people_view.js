@@ -1,16 +1,7 @@
 window.PeopleView = Backbone.View.extend({
-    initialize: function(){
-        this.collection.on('add', this.addOne, this);
-        this.collection.on('reset', this.addAll, this);
-    },
-    
-    initialize : function() {
-    	this.personForm = new PersonForm();
-    },
-    
-	events : {
-		"submit #create-person-f" : "savePerson"
-	},
+  initialize : function() {
+    this.collection.on('add', this.addOne, this);
+    this.collection.on('reset', this.addAll, this);
 
     tagName: "ol",
 
