@@ -4,15 +4,15 @@ window.PeopleView = Backbone.View.extend({
     this.collection.on('reset', this.addAll, this);
 
     this.personForm = new PersonForm();
-    this.personForm.on('submit', this.savePerson, this);
+    this.personForm.on('submit', this.createNewPerson, this);
     this.personForm.render();
   },
 
   tagName : "ol",
 
   render : function() {
-    this.personForm.render();
     this.addAll();
+    this.personForm.render();
     return this;
   },
 
@@ -21,15 +21,23 @@ window.PeopleView = Backbone.View.extend({
     this.collection.forEach(this.addOne, this);
   },
 
+  createNewPerson : function() {
+    var person = this.savePerson();
+    this.addOne(person);
+  },
+  
   addOne : function(person) {
     var personView = new PersonView({
       model : person
     });
     this.$el.append(personView.render().el);
   },
+  
+  removePerson : function(id) {
+    thid.collection.destroy();
+  },
 
   savePerson : function(event) {
-    console.log("save person clicked--inside peopleview");
     var person = this.personForm.savePerson(event);
     this.addOne(person);
   }

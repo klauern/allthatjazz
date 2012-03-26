@@ -12,12 +12,12 @@ window.PersonForm = Backbone.View.extend({
   },
   
   triggerSave : function(event) {
+    event.preventDefault();
     console.log("triggered event in person form");
     this.trigger('submit');
   },
 
   savePerson : function(event) {
-    event.preventDefault();
     console.log("submit clicked");
     var person = new Person({
       fullName : $('#create-person-f :input[name="fullName"]').val(),
@@ -25,7 +25,6 @@ window.PersonForm = Backbone.View.extend({
     });
     console.log("saving person");
     person.save();
-    
     return person;
   }
 });
