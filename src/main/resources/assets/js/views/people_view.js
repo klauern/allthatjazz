@@ -6,7 +6,6 @@ window.PeopleView = Backbone.View.extend({
     this.personForm = new PersonForm();
     this.personForm.on('submit', this.savePerson, this);
     this.personForm.render();
-    // this.personForm.on('add', 'render');
   },
 
   tagName : "ol",
@@ -30,7 +29,6 @@ window.PeopleView = Backbone.View.extend({
   },
 
   savePerson : function(event) {
-    // event.preventDefault();
     console.log("save person clicked--inside peopleview");
     var person = this.personForm.savePerson(event);
     this.addOne(person);
