@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640" />
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>allthatjazz by klauern</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/klauern/allthatjazz">Fork Me on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>allthatjazz</h1>
+            <h2>Dropwizard fun things (and some BackboneJS and Twitter Bootstrap)</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/klauern/allthatjazz/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/klauern/allthatjazz/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+      <span class="banner-fix"></span>
+
+      <section id="main_content">
+        <h1>allthatjazz</h1>
+
+<p>I'm a big fan of <a href="http://dropwizard.codahale.com">Dropwizard</a>, and I thought
+it would be a really fun Java project to get acquainted with RESTful APIs, clean
+Java libraries like <a href="http://www.jdbi.org">JDBI</a>, and just have some fun with
+Java. </p>
+
+<p>This project is really the <a href="https://github.com/codahale/dropwizard/tree/master/dropwizard-example">dropwizard-example</a>, with some minor tweaks to handle running <a href="http://documentcloud.github.com/backbone/">BackboneJS</a> and
+<a href="https://twitter.github.com/bootstrap">Twitter Bootstrap</a>.</p>
+
+<p>I think this is fun stuff, and I was unaware of how cool and easy Backbone is
+to get running.</p>
+
+<p>Check this project out if you'd like to toy with it.  I'd suggest starting by
+understanding what is required to run Dropwizard:</p>
+
+<ul>
+<li>Java 6+</li>
+<li>Maven</li>
+</ul><p>And then you can bootstrap the app and just go with it:</p>
+
+<pre><code>mvn install
+java -jar target/allthatjazz-1.0.0-SNAPSHOT.jar setup hello-world.yml
+
+# then, run it
+
+java -jar target/allthatjazz-1.0.0-SNAPSHOT.jar server hello-world.yml
+</code></pre>
+
+<p>This is really just a facny front-end for a few really polished libraries.
+I'd really just look at the <a href="http://dropwizard.codahale.com">Dropwizard documentation</a>
+to really learn what this is about.</p>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/klauern">klauern</a> can be found on <a href="https://github.com/klauern/allthatjazz">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
