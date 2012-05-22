@@ -1,5 +1,7 @@
 package com.example.helloworld.resources;
 
+import java.util.LinkedList;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -33,6 +35,7 @@ public class PersonResource {
     @Path("/{personId}")
     public Person getPerson(@PathParam("personId") LongParam personId) {
         return peopleDAO.findById(personId.get());
+        
     }
     
 	@POST
