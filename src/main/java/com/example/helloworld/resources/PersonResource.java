@@ -17,18 +17,18 @@ import javax.ws.rs.core.UriBuilder;
 import com.example.helloworld.core.Person;
 import com.example.helloworld.db.PeopleDAO;
 import com.yammer.dropwizard.jersey.params.LongParam;
-import com.yammer.dropwizard.logging.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Path("/person")
 @Produces(MediaType.APPLICATION_JSON)
 public class PersonResource {
 
     private final PeopleDAO peopleDAO;
-    private final Log LOG;
+    private final Logger LOG = LoggerFactory.getLogger(PersonResource.class);
 
     public PersonResource(PeopleDAO peopleDAO) {
         this.peopleDAO = peopleDAO;
-        LOG = Log.forClass(PersonResource.class);
     }
 
     @GET

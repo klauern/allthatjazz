@@ -21,18 +21,18 @@ import com.example.helloworld.core.Person;
 import com.example.helloworld.db.PeopleDAO;
 import com.yammer.dropwizard.jersey.caching.CacheControl;
 import com.yammer.dropwizard.jersey.params.LongParam;
-import com.yammer.dropwizard.logging.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Path("/people")
 @Produces(MediaType.APPLICATION_JSON)
 public class PeopleResource {
 
 	private final PeopleDAO peopleDAO;
-	private final Log LOG;
+        private static final Logger LOG = LoggerFactory.getLogger(PeopleResource.class);
 
 	public PeopleResource(PeopleDAO peopleDAO) {
 		this.peopleDAO = peopleDAO;
-		LOG = Log.forClass(PeopleResource.class);
 	}
 
 	@GET
