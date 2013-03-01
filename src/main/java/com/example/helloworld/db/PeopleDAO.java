@@ -8,27 +8,27 @@ import org.skife.jdbi.v2.sqlobject.GetGeneratedKeys;
 import org.skife.jdbi.v2.sqlobject.SqlQuery;
 import org.skife.jdbi.v2.sqlobject.SqlUpdate;
 import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapperFactory;
-import org.skife.jdbi.v2.sqlobject.stringtemplate.ExternalizedSqlViaStringTemplate3;
 import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 
-@ExternalizedSqlViaStringTemplate3
-@RegisterMapperFactory(BeanMapperFactory.class)
+
 public interface PeopleDAO {
 
-    @SqlUpdate
+    @SqlQuery("create table people (id Serial primary key, fullName varchar(255), jobTitle varchar(100))")
     void createPeopleTable();
 
-    @SqlQuery
+    @RegisterMapperFactory(BeanMapperFactory.class)
+    @SqlQuery("select id, fullName, jobTitle from people where id = :id")
     Person findById(@Bind("id") Long id);
 
-    @SqlUpdate
+    @SqlUpdate("insert into people (fullName, jobTitle) values (:fullName, :jobTitle)")
     @GetGeneratedKeys
     long create(@BindBean Person person);
 
-    @SqlQuery
+    @RegisterMapperFactory(BeanMapperFactory.class)
+    @SqlQuery("select id, fullName, jobTitle from people")
     ImmutableList<Person> findAll();
-    
-    @SqlUpdate
+
+    @SqlUpdate("delete from people where id = :id")
     void deleteById(@Bind("id") Long id);
 
 }
