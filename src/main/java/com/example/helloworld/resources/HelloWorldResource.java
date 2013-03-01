@@ -16,6 +16,7 @@ import javax.ws.rs.core.MediaType;
 @Path("/hello-world")
 @Produces(MediaType.APPLICATION_JSON)
 public class HelloWorldResource {
+
     private final Template template;
     private final AtomicLong counter;
 

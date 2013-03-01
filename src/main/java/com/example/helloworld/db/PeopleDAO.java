@@ -10,7 +10,6 @@ import org.skife.jdbi.v2.sqlobject.SqlUpdate;
 import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapperFactory;
 import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 
-
 public interface PeopleDAO {
 
     @RegisterMapperFactory(BeanMapperFactory.class)
@@ -27,5 +26,4 @@ public interface PeopleDAO {
 
     @SqlUpdate("delete from people where id = :id")
     void deleteById(@Bind("id") Long id);
-
 }

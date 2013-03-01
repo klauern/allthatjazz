@@ -29,24 +29,15 @@ public class PersonResource {
     @Path("/{personId}")
     public Person getPerson(@PathParam("personId") LongParam personId) {
         return peopleDAO.findById(personId.get());
-        
+
     }
 
-	@POST
-	public Response createPerson(Person person) {
-		LOG.info("POST called with name {} and job {}", person.getFullName(), person.getJobTitle());
-		long id = peopleDAO.create(person);
-		LOG.info("created person with id {}", id);
-		Person p = peopleDAO.findById(id);
-		return Response.created(UriBuilder.fromPath("/person").build(p.getId())).build();
-	}
-
-//	@POST
-//	public Response createPerson(Person p) {
-//		LOG.info("POST called with person {}", p);
-//		long id = peopleDAO.create(p);
-//		LOG.info("create person with id {}", id);
-//		return Response.created(UriBuilder.fromPath("/person").build(peopleDAO.findById(id))).build();
-//	}
-
+    @POST
+    public Response createPerson(Person person) {
+        LOG.info("POST called with name {} and job {}", person.getFullName(), person.getJobTitle());
+        long id = peopleDAO.create(person);
+        LOG.info("created person with id {}", id);
+        Person p = peopleDAO.findById(id);
+        return Response.created(UriBuilder.fromPath("/person").build(p.getId())).build();
+    }
 }

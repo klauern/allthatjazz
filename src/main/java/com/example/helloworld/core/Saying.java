@@ -1,6 +1,7 @@
 package com.example.helloworld.core;
 
 public class Saying {
+
     private final long id;
     private final String content;
 
