@@ -1,22 +1,16 @@
 package com.example.helloworld.resources;
 
-import java.util.LinkedList;
-
-import javax.ws.rs.Consumes;
-import javax.ws.rs.DELETE;
+import com.example.helloworld.core.Person;
+import com.example.helloworld.db.PeopleDAO;
+import com.yammer.dropwizard.jersey.params.LongParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriBuilder;
-
-import com.example.helloworld.core.Person;
-import com.example.helloworld.db.PeopleDAO;
-import com.yammer.dropwizard.jersey.params.LongParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

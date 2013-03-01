@@ -2,7 +2,6 @@ package com.example.helloworld.resources;
 
 import com.example.helloworld.core.User;
 import com.yammer.dropwizard.auth.Auth;
-
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;

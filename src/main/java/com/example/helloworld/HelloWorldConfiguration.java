@@ -1,13 +1,12 @@
 package com.example.helloworld;
 
 import com.example.helloworld.core.Template;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.yammer.dropwizard.config.Configuration;
 import com.yammer.dropwizard.db.DatabaseConfiguration;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import org.hibernate.validator.constraints.NotEmpty;
-
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+import org.hibernate.validator.constraints.NotEmpty;
 
 @SuppressWarnings("FieldMayBeFinal")
 public class HelloWorldConfiguration extends Configuration {
