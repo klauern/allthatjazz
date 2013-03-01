@@ -37,7 +37,7 @@ public class PersonResource {
         return peopleDAO.findById(personId.get());
         
     }
-    
+
 	@POST
 	public Response createPerson(Person person) {
 		LOG.info("POST called with name {} and job {}", person.getFullName(), person.getJobTitle());
@@ -46,7 +46,7 @@ public class PersonResource {
 		Person p = peopleDAO.findById(id);
 		return Response.created(UriBuilder.fromPath("/person").build(p.getId())).build();
 	}
-	
+
 //	@POST
 //	public Response createPerson(Person p) {
 //		LOG.info("POST called with person {}", p);
@@ -54,5 +54,5 @@ public class PersonResource {
 //		LOG.info("create person with id {}", id);
 //		return Response.created(UriBuilder.fromPath("/person").build(peopleDAO.findById(id))).build();
 //	}
-    
+
 }
