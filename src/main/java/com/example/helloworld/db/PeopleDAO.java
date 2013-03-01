@@ -13,9 +13,6 @@ import org.skife.jdbi.v2.tweak.BeanMapperFactory;
 
 public interface PeopleDAO {
 
-    @SqlQuery("create table people (id Serial primary key, fullName varchar(255), jobTitle varchar(100))")
-    void createPeopleTable();
-
     @RegisterMapperFactory(BeanMapperFactory.class)
     @SqlQuery("select id, fullName, jobTitle from people where id = :id")
     Person findById(@Bind("id") Long id);
