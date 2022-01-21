@@ -15,7 +15,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <dropwizard.version>0.6.1</dropwizard.version>
-        <h2db.version>1.3.170</h2db.version>
+        <h2db.version>2.1.210</h2db.version>
     </properties>
 
     <build>
